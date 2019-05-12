@@ -13,10 +13,21 @@ eureka:
     status-page-url-path: ${server.context-path}${management.context-path}/info
     metadata-map:
       management.context-path: ${server.context-path}${management.context-path}
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
 
+# Datasource and JPA configuration to be used for storing the OAuth authorization details
+# and token store
 spring:
   datasource:
-    url: jdbc:h2:mem:user
-    driver-class-name: org.h2.Driver
+    url: jdbc:mysql://localhost:3306/auth
+    username: root
+    password: root
+    driver-class: com.mysql.jdbc.Driver
+
   jpa:
-    show-sql: true
+    database-platform: org.hibernate.dialect.MySQLDialect
+    show-sql: false
+    hibernate:
+      ddl-auto: create
