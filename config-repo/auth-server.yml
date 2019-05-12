@@ -19,18 +19,18 @@
 
 # Datasource and JPA configuration to be used for storing the OAuth authorization details
 # and token store
-#spring:
-#  datasource:
-#    url: jdbc:mysql://localhost:3306/oauth?verifyServerCertificate=false&useSSL=false&requireSSL=false&useTimezone=true&serverTimezone=UTC
-#    username: root
-#    password: root
-#    driver-class: com.mysql.jdbc.Driver
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/oauth?verifyServerCertificate=false&useSSL=false&requireSSL=false&useTimezone=true&serverTimezone=UTC
+    username: root
+    password: root
+    driver-class: com.mysql.jdbc.Driver
 
-#  jpa:
-#    database-platform: org.hibernate.dialect.MySQLDialect
-#    show-sql: false
-#    hibernate:
-#      ddl-auto: create
+  jpa:
+    database-platform: org.hibernate.dialect.MySQLDialect
+    show-sql: false
+    hibernate:
+      ddl-auto: create
 
 server:
   context-path: /uaa
@@ -53,13 +53,13 @@ eureka:
     service-url:
       defaultZone: http://${eureka.instance.hostname}:${eureka.instance.port}/eureka/
 
-spring:
-  datasource:
-    url: jdbc:h2:mem:user
-    driver-class-name: org.h2.Driver
-  jpa:
-    show-sql: true
-  h2:
-    console:
-      enabled: true
-      path: /h2-console
+#spring:
+#  datasource:
+#    url: jdbc:h2:mem:user
+#    driver-class-name: org.h2.Driver
+#  jpa:
+#    show-sql: true
+#  h2:
+#    console:
+#      enabled: true
+#      path: /h2-console
